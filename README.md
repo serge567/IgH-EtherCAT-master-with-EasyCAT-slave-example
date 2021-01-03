@@ -11,4 +11,6 @@ Combine IgH EtherCAT master source code to one file with
 Unpack IgH EtherCAT master source code with
 *    tar -xvjf ethercat.tar.bz2
 
-Use ./configure --disable-8139too instead of ./configure
+Use ./configure --disable-8139too instead of ./configure, read /ethercat/INSTALL for other details
+
+
