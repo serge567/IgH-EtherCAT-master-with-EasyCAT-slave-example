@@ -4,6 +4,7 @@
 *    **ethercat.tar.bz2.00**  - IgH EtherCAT master, part 1
 *    **ethercat.tar.bz2.01**  - IgH EtherCAT master, part 2
 *    **main.c**               - IgH EtherCAT master modifyed example for EasyCAT slave, overwrite with main.c file in /ethercat/examples/dc_user and compile there with "make"
+*    **ethercat**             - config file for ethercat master, copy it to /etc/sysconfig, change lan mac and name (look installed lan for ethercat master)
                            
 Combine IgH EtherCAT master source code to one file with 
 *    cat ethercat.tar.bz2.?? > ethercat.tar.bz2
