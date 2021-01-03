@@ -14,4 +14,18 @@ Unpack IgH EtherCAT master source code with
 
 Use ./configure --disable-8139too instead of ./configure, read /ethercat/INSTALL for details
 
+Example code (main.c) creates files to use bash script or console to send/receive data to/from EasyCAT slave
 
+* /run/ethercat/EasyCAT/pdoin0
+* ::::::::::::::::::::::::::::
+* /run/ethercat/EasyCAT/pdoin31
+
+* /run/ethercat/EasyCAT/pdoout0
+* :::::::::::::::::::::::::::::
+* /run/ethercat/EasyCAT/pdoout31
+
+Example to receive byte from input 1
+* cat /run/ethercat/EasyCAT/pdoin1
+
+Example to send byte 255 to output 10
+* echo 255 > /run/ethercat/EasyCAT/pdoout10
