@@ -1,6 +1,6 @@
-IgH EtherCAT master with EasyCAT slave example
+# IgH EtherCAT master with EasyCAT slave example
 
-Files:
+**Files:**
     ethercat.tar.bz2.00  - IgH EtherCAT master, part 1
     ethercat.tar.bz2.01  - IgH EtherCAT master, part 2
     main.c               - IgH EtherCAT master modifyed example for EasyCAT slave, 
