@@ -24,7 +24,7 @@ Example code (main.c) creates files to use bash script or console to send/receiv
 * :::::::::::::::::::::::::::::
 * /run/ethercat/EasyCAT/pdoout31
 
-Example to receive byte from input 1
+Example to display received byte from input 1
 * cat /run/ethercat/EasyCAT/pdoin1
 
 Example to send byte 255 to output 10
