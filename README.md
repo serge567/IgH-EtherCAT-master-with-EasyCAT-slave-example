@@ -32,7 +32,7 @@ Expected output of "./ethercat pdos -m0":
 *  RxPDO 0x1600 "Outputs"
 *    PDO entry 0x0005:01,  8 bit, "Byte0"
 *    PDO entry 0x0005:02,  8 bit, "Byte1"
-*       ::::::::::::::::::::::::::::::
+       ::::::::::::::::::::::::::::::
 *    PDO entry 0x0005:20,  8 bit, "Byte31"
 * SM1: PhysAddr 0x1200, DefaultSize    0, ControlRegister 0x20, Enable 1
 *  TxPDO 0x1a00 "Inputs"
