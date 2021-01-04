@@ -15,7 +15,28 @@ Unpack IgH EtherCAT master source code with
 Use ./configure --disable-8139too instead of ./configure, read /ethercat/INSTALL for details, 
 The IgH EtherCAT master source code has been tested to compile with kernel version 5.4.80-gentoo-x86_64.
 
-After IgH EtherCAT master installed, check ethercat service settings /etc/sysconfig/ethercat, start ethercat service with
+After IgH EtherCAT master installed, check ethercat service settings /etc/sysconfig/ethercat,
+example
+* ifconfig 
+   
+      enp3s0u1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+              inet 169.254.124.186  netmask 255.255.0.0  broadcast 169.254.255.255
+              ether 70:88:6b:84:2d:b4  txqueuelen 1000  (Ethernet)
+              RX packets 358799  bytes 28470392 (27.1 MiB)
+              RX errors 0  dropped 0  overruns 0  frame 0
+              TX packets 358978  bytes 33531024 (31.9 MiB)
+              TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+    for this example, in /etc/sysconfig/ethercat file
+    
+    MASTER0_DEVICE="70:88:6b:84:2d:b4"
+    
+    DEVICE_MODULES="generic"
+    
+    LINK_DEVICES="enp3s0u1"
+    
+
+Start ethercat service with
 * /etc/init.d/ethercat start
 
 It might be helpful to check ethercat service messages with
