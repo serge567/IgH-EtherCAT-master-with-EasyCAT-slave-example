@@ -50,9 +50,9 @@ Expected output of "./ethercat pdos -m0":
 
 Copy main.c file to /ethercat/examples/dc_user (/ethercat is IgH EtherCAT master source code)
 
-Go to /ethercat/examples/dc_user compile "main.c" there with "make", the output file will be "ec_dc_user_example" 
+Go to "/ethercat/examples/dc_user", compile "main.c" there with "make", the output file will be "ec_dc_user_example" 
 
-Start EasyCAT slave example
+Start EasyCAT slave example in "/ethercat/examples/dc_user" with
 * ./ec_dc_user_example
 
 Example code (main.c) creates files to use bash script or console to send/display received data to/from EasyCAT slave
