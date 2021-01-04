@@ -28,7 +28,7 @@ Check connected EasyCAT slave with
 
 Expected output of "./ethercat slave -m0":
 
-0  0:0  PREOP  +  Generic 32+32 bytes rev 1
+    0  0:0  PREOP  +  Generic 32+32 bytes rev 1
 
 Expected output of "./ethercat pdos -m0":
 
@@ -47,6 +47,13 @@ Expected output of "./ethercat pdos -m0":
        ::::::::::::::::::::::::::::::
 
      PDO entry 0x0006:20,  8 bit, "Byte31"
+
+Copy main.c file to /ethercat/examples/dc_user (/ethercat is IgH EtherCAT master source code)
+
+Go to /ethercat/examples/dc_user compile "main.c" there with "make", the output file will be "ec_dc_user_example" 
+
+Start EasyCAT slave example
+* ./ec_dc_user_example
 
 Example code (main.c) creates files to use bash script or console to send/display received data to/from EasyCAT slave
 
