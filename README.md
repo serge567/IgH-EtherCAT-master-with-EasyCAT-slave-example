@@ -30,14 +30,12 @@ Expected output of "./ethercat slave -m0":
 * 0  0:0  PREOP  +  Generic 32+32 bytes rev 1
 
 Expected output of "./ethercat pdos -m0":
-* SM0: PhysAddr 0x1000, DefaultSize    0, ControlRegister 0x64, Enable 1
-*  RxPDO 0x1600 "Outputs"
+* SM0: PhysAddr 0x1000, DefaultSize    0, ControlRegister 0x64, Enable 1 RxPDO 0x1600 "Outputs"
 *    PDO entry 0x0005:01,  8 bit, "Byte0"
 
        ::::::::::::::::::::::::::::::
 *    PDO entry 0x0005:20,  8 bit, "Byte31"
-* SM1: PhysAddr 0x1200, DefaultSize    0, ControlRegister 0x20, Enable 1
-*  TxPDO 0x1a00 "Inputs"
+* SM1: PhysAddr 0x1200, DefaultSize    0, ControlRegister 0x20, Enable 1 TxPDO 0x1a00 "Inputs"
 *    PDO entry 0x0006:01,  8 bit, "Byte0"
 
        ::::::::::::::::::::::::::::::
