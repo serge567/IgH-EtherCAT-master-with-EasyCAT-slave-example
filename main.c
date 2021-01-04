@@ -1,7 +1,12 @@
-/* 2021-01-03
+/* Ver 20210104
  IgH EtherCAT master modifyed example for EasyCAT slave
  overwrite with this file in /ethercat/examples/dc_user
  and compile there with "make"
+ 
+ Changelog
+ 2020/01/03 Initial release
+ 2020/01/04 Added string defenitions for PDO IN/OUT files
+ 
 */
 #include <errno.h>
 #include <signal.h>
@@ -44,6 +49,12 @@ static int offset_out;
 static unsigned int counter = 0;
 static unsigned int sync_ref_counter = 0;
 const struct timespec cycletime = {0, PERIOD_NS};
+/****************************************************************************/
+// part of "/run/ethercat/EasyCAT" must be the same below for all strings below
+#define S_PATH 				 "/run/ethercat/EasyCAT" 			// path prefix
+#define PDO_IN_FILE 		 "/run/ethercat/EasyCAT/pdoin" 	// PDO inputs file prefix 
+#define PDO_OUT_FILE 		 "/run/ethercat/EasyCAT/pdoout" 	// PDO outputs file prefix 
+#define BASH_CMD_CREATE_DIR  "mkdir -p /run/ethercat/EasyCAT" 	// console command to create dir
 /*****************************************************************************/
 struct timespec timespec_add(struct timespec time1, struct timespec time2)
 {   struct timespec result;
@@ -86,7 +97,7 @@ void write_pdo_files()
 	int input;
 	for (input = 0; input < 32; ++input) // 0..31 inpits for EasyCAT
 	{	FILE *fp;
-		char sfilename[255] = "/run/ethercat/EasyCAT/pdoin";
+		char sfilename[255] = PDO_IN_FILE;
 		char istr[5];
 		sprintf(istr, "%d", input);
 		strncat (sfilename, istr, 5);
@@ -112,7 +123,7 @@ void read_pdo_files()
 	for (output = 0; output < 32; ++output) // 0..31 outputs for EasyCAT
 	{	FILE *fp;
 		int iCFile = 0;
-		char sfilename[255] = "/run/ethercat/EasyCAT/pdoout";
+		char sfilename[255] = PDO_OUT_FILE;
 		char istr[5];
 		sprintf(istr, "%d", output);
 		strncat (sfilename, istr, 5);
@@ -221,8 +232,8 @@ int main(int argc, char **argv)
     printf("Using priority %i.", param.sched_priority);
     if (sched_setscheduler(0, SCHED_FIFO, &param) == -1) 
     {   perror("sched_setscheduler failed");}
-    if (system("mkdir -p /run/ethercat/EasyCAT") == -1)
-    {	printf("Couldn't create /run/ethercat/EasyCAT \n");
+    if (system(BASH_CMD_CREATE_DIR) == -1)
+    {	printf("Couldn't create %s \n", S_PATH);
 		return -1;
 	}    
     printf("Starting cyclic function.\n");
