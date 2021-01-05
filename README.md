@@ -26,8 +26,16 @@ example
               RX errors 0  dropped 0  overruns 0  frame 0
               TX packets 358978  bytes 33531024 (31.9 MiB)
               TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    
+    where the interface name is enp3s0u1, mac is 70:88:6b:84:2d:b4
+            
+* lsusb  # (use lspci -nn in case of lan is on PCI)
+              
+      Bus 004 Device 002: ID 0bda:8153 Realtek Semiconductor Corp. RTL8153 Gigabit Ethernet Adapter
 
-    for this example, in /etc/sysconfig/ethercat file
+    where LAN with chipset RTL8153 (0bda:8153), IgH EtherCAT master source code does not include Ethernet driver module specially for RTL8153 (0bda:8153) to use it for EtherCAT operation, ethercat master "generic" lan driver is going to be used.
+    
+    for this example, in /etc/sysconfig/ethercat file:
     
     MASTER0_DEVICE="70:88:6b:84:2d:b4"
     
