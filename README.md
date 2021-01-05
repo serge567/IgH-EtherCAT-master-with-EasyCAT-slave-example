@@ -12,7 +12,7 @@ Combine IgH EtherCAT master source code to one file with
 Unpack IgH EtherCAT master source code with
 *    tar -xvjf ethercat.tar.bz2
 
-Use ./configure --disable-8139too instead of ./configure, read /ethercat/INSTALL for details, 
+Try to use ./configure --disable-8139too instead of ./configure if error occurs, read /ethercat/INSTALL for details, 
 The IgH EtherCAT master source code has been tested to compile with kernel version 5.4.80-gentoo-x86_64.
 
 After IgH EtherCAT master installed, check ethercat service settings /etc/sysconfig/ethercat,
