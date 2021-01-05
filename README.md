@@ -33,7 +33,7 @@ example
               
       Bus 004 Device 002: ID 0bda:8153 Realtek Semiconductor Corp. RTL8153 Gigabit Ethernet Adapter
 
-    where LAN with chipset RTL8153 (0bda:8153), IgH EtherCAT master source code does not include Ethernet driver module specially for RTL8153 (0bda:8153) to use it for EtherCAT operation, ethercat master "generic" lan driver is going to be used.
+    where LAN with chipset RTL8153 (0bda:8153), the IgH EtherCAT master source code does not include Ethernet driver module specially for RTL8153 (0bda:8153) to use it for EtherCAT operation, ethercat master "generic" lan driver is going to be used.
     
     for this example, in /etc/sysconfig/ethercat file:
     
